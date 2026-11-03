@@ -1,74 +1,195 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+/* CSS design tokens */
+:root {
+    --primary: #234b70;
+    --primary-dark: #173653;
+    --accent: #e5a93d;
+    --background: #f2f2f2;
+    --white: #ffffff;
+    --text: #333333;
+    --border: #dddddd;
+
+    --font-body: 'DM Sans', sans-serif;
+    --font-heading: 'Manrope', sans-serif;
+
+    --space-small: 0.5rem;
+    --space-medium: 1rem;
+    --space-large: 2rem;
+
+    --content-width: 50rem;
+}
+
+/* Element selectors */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial;
-    background-color: #f2f2f2;
+    font-family: var(--font-body);
+    background-color: var(--background);
+    color: var(--text);
     margin: 0;
+    line-height: 1.6;
 }
 
-header {
-    background-color: #234b70;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 10px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-main {
-    background-color: white;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 800px;
+h1, h2, h3 {
+    font-family: var(--font-heading);
 }
 
 h2 {
-    color: #234b70;
+    color: var(--primary);
 }
 
+a {
+    color: var(--primary);
+}
+
+/* Header */
+.site-header {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: var(--space-large);
+}
+
+.site-header h1 {
+    margin-top: 0;
+}
+
+/* Descendant selector */
+.site-nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin: var(--space-small);
+}
+
+.site-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    width: 90%;
+    max-width: var(--content-width);
+    margin: var(--space-large) auto;
+}
+
+.hero {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: var(--space-large);
+    border-radius: 0.5rem;
+}
+
+.hero h2 {
+    color: var(--white);
+}
+
+/* Class selector */
+.card {
+    background-color: var(--white);
+    padding: var(--space-large);
+    margin-top: var(--space-large);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+}
+
+/* ID selector */
+#join-us {
+    background-color: #fff8e8;
+    border-left: 5px solid var(--accent);
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    border-radius: 0.3rem;
+}
+
+.button:hover {
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
+    background-color: var(--white);
 }
 
 th, td {
-    border: 1px solid black;
-    padding: 10px;
+    border: 1px solid var(--border);
+    padding: 0.6rem;
     text-align: left;
 }
 
+th {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Forms */
+form label {
+    display: block;
+    margin-top: var(--space-medium);
+}
+
 input, textarea, select {
-    margin-top: 8px;
-    margin-bottom: 10px;
-    padding: 8px;
+    font: inherit;
+    padding: 0.5rem;
+    margin-top: var(--space-small);
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-textarea,
-select {
+select,
+textarea {
     width: 100%;
-    box-sizing: border-box;
+    border: 1px solid var(--border);
 }
 
 input[type="submit"] {
-    background-color: #234b70;
-    color: white;
+    background-color: var(--primary);
+    color: var(--white);
     border: none;
-    padding: 10px 20px;
+    padding: 0.7rem 1rem;
     cursor: pointer;
 }
 
-footer {
-    background-color: #234b70;
-    color: white;
+/* Footer */
+.site-footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
     text-align: center;
-    padding: 10px;
+    padding: var(--space-medium);
+    margin-top: var(--space-large);
+}
+
+/* Mobile screen */
+@media (max-width: 40rem) {
+    .site-header {
+        padding: var(--space-medium);
+    }
+
+    .site-nav a {
+        display: inline-block;
+        margin: 0.3rem;
+    }
+
+    main {
+        width: 94%;
+        margin: var(--space-medium) auto;
+    }
+
+    .card, .hero {
+        padding: var(--space-medium);
+    }
 }
