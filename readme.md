@@ -1,4 +1,4 @@
-# Campus Connect - College Club Website
+## Campus Connect - College Club Website
 
 A simple college club website created using **HTML and CSS**.
 
